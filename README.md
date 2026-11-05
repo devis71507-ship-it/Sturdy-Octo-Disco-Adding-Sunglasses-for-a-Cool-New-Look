@@ -34,6 +34,9 @@ import matplotlib.pyplot as plt
 faceImage = cv2.imread(r"C:\Users\sdhan\Downloads\WhatsApp Image 2026-10-17 at 3.09.40 PM.jpeg")
 plt.imshow(faceImage[:,:,::-1]);plt.title("Face")
 ```
+
+<img width="300" height="376" alt="image" src="https://github.com/user-attachments/assets/bb598285-7d6a-4cbd-a9aa-e525b4b04484" />
+
 ```
 faceImage.shape
 ```
@@ -44,7 +47,8 @@ faceImage.shape
 glassPNG = cv2.imread(r"C:\iv\sunglass.jpg",-1)
 plt.imshow(glassPNG[:,:,::-1]);plt.title("glassPNG")
 ```
-Text(0.5, 1.0, 'glassPNG')
+
+<img width="496" height="273" alt="image" src="https://github.com/user-attachments/assets/6bfe1d0a-9556-4d9f-9901-72deeefd10d7" />
 
 ```
 # Resize the image to fit over the eye region
@@ -67,6 +71,8 @@ plt.figure(figsize=[15,15])
 plt.subplot(121);plt.imshow(glassBGR[:,:,::-1]);plt.title('Sunglass Color channels');
 plt.subplot(122);plt.imshow(glassMask1,cmap='gray');plt.title('Sunglass Alpha channel');
 ```
+<img width="750" height="182" alt="image" src="https://github.com/user-attachments/assets/841bc77e-584c-4f54-af3c-5d6cade467d3" />
+
 ```
 # Make a copy
 #faceWithGlassesNaive = resized_faceImage.copy()
@@ -77,6 +83,8 @@ faceWithGlassesNaive[95:175, 100:310]=glassBGR
 
 plt.imshow(faceWithGlassesNaive[...,::-1])
 ```
+<img width="451" height="370" alt="image" src="https://github.com/user-attachments/assets/31099efc-0873-4943-b9ec-57fd8ee5143b" />
+
 ```
 # Make the dimensions of the mask same as the input image.
 # Since Face Image is a 3-channel image, we create a 3 channel image for the mask
@@ -106,6 +114,10 @@ plt.subplot(131);plt.imshow(maskedEye[...,::-1]);plt.title("Masked Eye Region")
 plt.subplot(132);plt.imshow(maskedGlass[...,::-1]);plt.title("Masked Sunglass Region")
 plt.subplot(133);plt.imshow(eyeRoiFinal[...,::-1]);plt.title("Augmented Eye and Sunglass")
 ```
+
+<img width="745" height="165" alt="image" src="https://github.com/user-attachments/assets/ba480e27-84ce-41a9-a9bf-74b68dc8d1a6" />
+
+
 ```
 # Replace the eye ROI with the output from the previous section
 faceWithGlassesArithmetic[95:175, 100:310]=eyeRoiFinal
@@ -115,8 +127,11 @@ plt.figure(figsize=[20,20]);
 plt.subplot(121);plt.imshow(faceImage[:,:,::-1]); plt.title("Original Image");
 plt.subplot(122);plt.imshow(faceWithGlassesArithmetic[:,:,::-1]);plt.title("With Sunglasses");
 ```
+<img width="727" height="447" alt="image" src="https://github.com/user-attachments/assets/f45b83c3-aee7-438f-9338-cc219e812d00" />
 
 ## Output:
+
+![Uploading image.png…]()
 
 ## Result:
 
